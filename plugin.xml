@@ -32,6 +32,7 @@
         
         <framework src="com.android.support:support-v4:+" />
         <framework src="com.twilio:client-android:1.2.18"/>
+	<framework src="twilio.gradle" custom="true" type="gradleReference" />
 
 	<source-file src="src/android/build-extras.gradle" target-dir="."/>
         <source-file src="src/android/com/phonegap/plugins/twilioclient/IncomingConnectionActivity.java"
