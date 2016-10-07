@@ -71,7 +71,10 @@
 		<header-file src="src/ios/TCDevice.h" />
 		<header-file src="src/ios/TCDeviceDelegate.h" />
 		<header-file src="src/ios/TCPresenceEvent.h" />
-		<header-file src="src/ios/TwilioClient.h" />		
+		<header-file src="src/ios/TwilioClient.h" />
+		<source-file src="src/ios/libcrypto.a" framework="true"/>
+		<source-file src="src/ios/libssl.a" framework="true"/>
+		<source-file src="src/ios/libTwilioClient.a" framework="true"/>
         <info>
 You need to download __Twilio Client for iOS__ from https://www.twilio.com/docs/client/ios. Uncompress the download - you will need to follow a few steps that plugman can not do yet:
 
