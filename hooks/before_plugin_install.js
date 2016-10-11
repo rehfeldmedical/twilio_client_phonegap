@@ -8,7 +8,7 @@ module.exports = function(ctx) {
 	
 	var srcDir  = path.join(ctx.opts.plugin.pluginInfo.dir, 'src/ios');
 	var tarball = path.join(srcDir, 'twilio-client-ios-1.2.11.tar.bz2');
-	
+	var deferral = ctx.requireCordovaModule('q').defer();
 	
 	/*var fs = require('fs');
 	var tar = require('tar');
@@ -41,11 +41,14 @@ module.exports = function(ctx) {
 	var cmd = 'bunzip2 -c "' + tarball + '" | (cd "' + srcDir + '"; tar -xf -);';
 	require('child_process').exec(cmd, function (err, stdout, stderr) {
 		if (err) {
-			console.log(err);
-		}
-		// yea!
+			deferral.reject('Operation failed');
+		} else {
+			console.log('Finished');
+            deferral.resolve();
+		}		
+		
 	});
-	cmd = 'cd "' + srcDir + '"; cp -f twilio-client-ios-1.2.11/Headers/*.h .';
+	/*cmd = 'cd "' + srcDir + '"; cp -f twilio-client-ios-1.2.11/Headers/*.h .';
 	console.log(cmd);
 	require('child_process').exec(cmd, function (err, stdout, stderr) {
 		if (err) {
@@ -53,10 +56,11 @@ module.exports = function(ctx) {
 			console.log(err);
 		}
 		// yea!
-	});
+	});*/
 	//console.log(ctx.opts.plugin.pluginInfo.dir)
 	
 	console.log("************************************");
 	console.log("* Hello from Before Plugin Install *");
 	console.log("************************************");
+	return deferral.promise;
 }
