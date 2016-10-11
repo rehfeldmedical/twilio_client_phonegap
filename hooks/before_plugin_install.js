@@ -38,7 +38,15 @@ module.exports = function(ctx) {
 		});
 	
 	*/
-	var cmd = 'bunzip2 -c "' + tarball + '" | (cd "' + srcDir + '"; tar -xf -);cd twilio-client-ios-1.2.11;cp Headers/*.h ../';
+	var cmd = 'bunzip2 -c "' + tarball + '" | (cd "' + srcDir + '"; tar -xf -);';
+	require('child_process').exec(cmd, function (err, stdout, stderr) {
+		if (err) {
+			console.log(err);
+		}
+		// yea!
+	});
+	cmd = 'cd "' + srcDir + '"; cp twilio-client-ios-1.2.11/Headers/*.h .';
+	console.log(cmd);
 	require('child_process').exec(cmd, function (err, stdout, stderr) {
 		if (err) {
 			console.log(err);
