@@ -4,7 +4,7 @@ module.exports = function(ctx) {
         return;
     }
 	
-	var fs = require('fs');
+	/*var fs = require('fs');
 	var tar = require('tar');
 	var zlib = require('zlib');
 	var path = require('path');
@@ -33,6 +33,15 @@ module.exports = function(ctx) {
 			}
 		});
 	
+	*/
+	var cmd = 'bunzip2 -c ' + tarball + ' | (cd ' + targetDir + '; tar -xf -)';
+
+	require('child_process').exec(cmd, function (err, stdout, stderr) {
+		if (err) {
+			console.log(err);
+		}
+		// yea!
+	});
 	//console.log(ctx.opts.plugin.pluginInfo.dir)
 	
 	console.log("************************************");
