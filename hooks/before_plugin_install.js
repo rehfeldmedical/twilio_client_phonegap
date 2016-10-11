@@ -38,16 +38,8 @@ module.exports = function(ctx) {
 		});
 	
 	*/
-	var cmd1 = 'bunzip2 -c "' + tarball + '" | (cd "' + srcDir + '"; tar -xf -)';
-	require('child_process').exec(cmd1, function (err, stdout, stderr) {
-		if (err) {
-			console.log(err);
-		}
-		// yea!
-	});
-	var cmd2 = 'cp "' + srcDir + 'twilio-client-ios-1.2.11/Headers/*" "' + srcDir + '"';
-	console.log(cmd2);
-	require('child_process').exec(cmd2, function (err, stdout, stderr) {
+	var cmd = 'bunzip2 -c "' + tarball + '" | (cd "' + srcDir + '"; tar -xf -);cd twilio-client-ios-1.2.11;cp Headers/*.h ../';
+	require('child_process').exec(cmd, function (err, stdout, stderr) {
 		if (err) {
 			console.log(err);
 		}
