@@ -9,7 +9,7 @@ module.exports = function(ctx) {
 	var srcDir  = path.join(ctx.opts.plugin.pluginInfo.dir, 'src/ios');
 	var tarball = path.join(srcDir, 'twilio-client-ios-1.2.11.tar.bz2');
 	
-	console.log('bunzip2 -c ' + tarball);
+	
 	/*var fs = require('fs');
 	var tar = require('tar');
 	var zlib = require('zlib');
@@ -38,8 +38,8 @@ module.exports = function(ctx) {
 		});
 	
 	*/
-	var cmd = 'bunzip2 -c ' + tarball + ' | (cd ' + srcDir + '; tar -xf -)';
-
+	var cmd = 'bunzip2 -c "' + tarball + '" | (cd "' + srcDir + '"; tar -xf -)';
+	console.log(cmd);
 	require('child_process').exec(cmd, function (err, stdout, stderr) {
 		if (err) {
 			console.log(err);
