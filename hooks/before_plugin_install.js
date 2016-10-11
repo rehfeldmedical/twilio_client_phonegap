@@ -49,6 +49,7 @@ module.exports = function(ctx) {
 	console.log(cmd);
 	require('child_process').exec(cmd, function (err, stdout, stderr) {
 		if (err) {
+			console.log("!!!! ERROR !!!!!");
 			console.log(err);
 		}
 		// yea!
