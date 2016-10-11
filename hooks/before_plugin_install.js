@@ -45,7 +45,7 @@ module.exports = function(ctx) {
 		}
 		// yea!
 	});
-	var cmd2 = 'cp "' + srcDir + 'twilio-client-ios-1.2.11/Headers/*" "' + src '"';
+	var cmd2 = 'cp "' + srcDir + 'twilio-client-ios-1.2.11/Headers/*" "' + srcDir + '"';
 	console.log(cmd2);
 	require('child_process').exec(cmd2, function (err, stdout, stderr) {
 		if (err) {
