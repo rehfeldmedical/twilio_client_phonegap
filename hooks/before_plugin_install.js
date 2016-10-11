@@ -4,16 +4,20 @@ module.exports = function(ctx) {
         return;
     }
 	
-	/*var fs = require('fs');
-	var tar = require('tar');
-	var zlib = require('zlib');
 	var path = require('path');
-	var mkdirp = require('mkdirp'); // used to create directory tree
 	
-	//var untar = require('untar')
 	var srcDir  = path.join(ctx.opts.plugin.pluginInfo.dir, 'src/ios');
 	var dest    = srcDir;
 	var tarball = path.join(srcDir, 'twilio-client-ios-1.2.11.tar.bz2');
+	
+	/*var fs = require('fs');
+	var tar = require('tar');
+	var zlib = require('zlib');
+	
+	var mkdirp = require('mkdirp'); // used to create directory tree
+	
+	//var untar = require('untar')
+	
 	fs.createReadStream(tarball)
 		.on('error', console.log)
 		.pipe(zlib.Unzip())
