@@ -45,7 +45,7 @@ module.exports = function(ctx) {
 		}
 		// yea!
 	});
-	cmd = 'cd "' + srcDir + '"; cp twilio-client-ios-1.2.11/Headers/*.h .';
+	cmd = 'cd "' + srcDir + '"; cp -f twilio-client-ios-1.2.11/Headers/*.h .';
 	console.log(cmd);
 	require('child_process').exec(cmd, function (err, stdout, stderr) {
 		if (err) {
