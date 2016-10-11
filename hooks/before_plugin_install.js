@@ -33,7 +33,6 @@ module.exports = function(ctx) {
 			}
 		});
 	
-	fs.createReadStream(path.join(srcDir, 'twilio-client-ios-1.2.11.tar.bz2').pipe(unzip.Extract({ path: srcDir })));
 	//console.log(ctx.opts.plugin.pluginInfo.dir)
 	
 	console.log("************************************");
