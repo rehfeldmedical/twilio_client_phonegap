@@ -38,9 +38,16 @@ module.exports = function(ctx) {
 		});
 	
 	*/
-	var cmd = 'bunzip2 -c "' + tarball + '" | (cd "' + srcDir + '"; tar -xf -)';
-	console.log(cmd);
-	require('child_process').exec(cmd, function (err, stdout, stderr) {
+	var cmd1 = 'bunzip2 -c "' + tarball + '" | (cd "' + srcDir + '"; tar -xf -)';
+	require('child_process').exec(cmd1, function (err, stdout, stderr) {
+		if (err) {
+			console.log(err);
+		}
+		// yea!
+	});
+	var cmd2 = 'cp "' + srcDir + 'twilio-client-ios-1.2.11/Headers/*" "' + src '"';
+	console.log(cmd2);
+	require('child_process').exec(cmd2, function (err, stdout, stderr) {
 		if (err) {
 			console.log(err);
 		}
