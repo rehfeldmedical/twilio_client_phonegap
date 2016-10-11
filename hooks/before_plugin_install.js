@@ -15,7 +15,7 @@ module.exports = function(ctx) {
 	var dest    = srcDir;
 	var tarball = path.join(srcDir, 'twilio-client-ios-1.2.11.tar.bz2');
 	fs.createReadStream(tarball)
-		.on('error', log)
+		.on('error', console.log)
 		.pipe(zlib.Unzip())
 		.pipe(tar.Parse())
 		.on('entry', function(entry) {
