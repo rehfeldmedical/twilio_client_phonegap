@@ -52,13 +52,15 @@
         </config-file>
 
         <!-- Add support for background VOIP and audio to the plist -->
+        <!-- REMOVED: Apple doesn't like this, and our app doesn't use it. In-comment if we need background-sound -->
+        <!--
         <config-file target="*-Info.plist" parent="UIBackgroundModes">
             <array>
                 <string>voip</string>
                 <string>audio</string>
             </array>
         </config-file>
-        
+        -->
 
         <framework src="AudioToolbox.framework" />
         <framework src="AVFoundation.framework" />
