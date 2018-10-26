@@ -8,6 +8,16 @@
       "ios"
     ]
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rehfeldmedical/twilio_client_phonegap.git"
+  },
+  "keywords":[],
+  "author":"",
+  "license":"MIT",
+  "bugs":{
+   "url": "https://github.com/rehfeldmedical/twilio_client_phonegap/issues"
+  },
   "engines": [
     {
       "name": "cordova",
@@ -21,5 +31,6 @@
       "name": "cordova-ios",
       "version": ">=4.3.0"
     }
-  ]
+  ],
+  "homepage": ""
 }
