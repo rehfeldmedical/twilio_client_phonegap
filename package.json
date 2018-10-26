@@ -1,4 +1,25 @@
 {
   "name": "twilio-client-phonegap-plugin",
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "cordova": {
+    "id": "com.phonegap.plugins.twilioclient",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=6.4.0"
+    },
+    {
+      "name": "cordova-android",
+      "version": ">=6.0.0"
+    },
+    {
+      "name": "cordova-ios",
+      "version": ">=4.3.0"
+    }
+  ]
 }
